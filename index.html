@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медіа-Центр "Третя Столиця" | Офіційний сайт</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Inter:wght@300;400;600&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0f172a; /* Сланцево-чорний */
+            color: #f8fafc;
+        }
+        
+        h1, h2, h3, h4, .nav-logo-text {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .respect-blue { background-color: #0047AB; }
+        .respect-text { color: #3b82f6; } /* Світліший синій для тексту на темному тлі */
+        
+        .glow-btn {
+            box-shadow: 0 0 20px rgba(0, 71, 171, 0.4);
+            transition: all 0.3s ease;
+        }
+        .glow-btn:hover {
+            box-shadow: 0 0 30px rgba(0, 71, 171, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .glow-red {
+            box-shadow: 0 0 20px rgba(227, 28, 37, 0.4);
+            transition: all 0.3s ease;
+        }
+        .glow-red:hover {
+            box-shadow: 0 0 30px rgba(227, 28, 37, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .live-indicator {
+            animation: pulse-live 2s infinite;
+        }
+
+        @keyframes pulse-live {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Стилі для радіо-плеєра */
+        .sticky-player {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
+        }
+
+        /* Градієнтний акцент на фоні */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,71,171,0.15) 0%, rgba(15,23,42,0) 70%);
+            top: -200px;
+            left: -200px;
+            z-index: -1;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+
+    <!-- Фоновий акцент -->
+    <div class="bg-glow"></div>
+
+    <!-- НАВІГАЦІЯ -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- Логотип (Використовуємо завантажений файл) -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="TC_logo_1.png" alt="Третя Столиця Логотип" class="h-12 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://via.placeholder.com/150x50/0047AB/FFFFFF?text=Третя+Столиця'">
+                <div class="hidden sm:block">
+                    <span class="block font-black text-white text-lg leading-none tracking-wide nav-logo-text">ТРЕТЯ СТОЛИЦЯ</span>
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-slate-400 font-bold">Медіа-Центр</span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-slate-300">
+                <a href="#about" class="hover:text-white hover:text-blue-400 transition-colors">Про нас</a>
+                <a href="#projects" class="hover:text-white hover:text-blue-400 transition-colors">Проєкти</a>
+                <a href="#youtube" class="hover:text-white hover:text-blue-400 transition-colors">Rivne Live</a>
+                <a href="#contacts" class="hover:text-white hover:text-blue-400 transition-colors">Контакти</a>
+            </div>
+
+            <a href="#support" class="bg-red-600 hover:bg-red-500 text-white px-6 py-2.5 rounded-full text-xs font-black transition-all glow-red uppercase tracking-wider border border-red-500/50">
+                Підтримати
+            </a>
+        </div>
+    </nav>
+
+    <!-- ГЕЙТВЕЙ (HERO) -->
+    <header class="pt-40 pb-24 px-4 relative">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8">
+                <span class="w-2 h-2 rounded-full bg-blue-500 live-indicator"></span> 24/7 В Ефірі
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight uppercase tracking-tight">
+                Нові регіональні медіа <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">сучасної України</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl mb-12 leading-relaxed font-light">
+                Професійний аудіовізуальний контент, локальне радіомовлення та формування інформаційного порядку денного Рівненщини.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <button onclick="togglePlayer()" class="respect-blue text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 glow-btn uppercase tracking-wide">
+                    <i class="fas fa-play text-xl"></i> Слухати Радіо
+                </button>
+                <a href="#youtube" class="bg-slate-800 text-white border border-slate-700 px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-slate-700 transition-all uppercase tracking-wide">
+                    <i class="fab fa-youtube text-red-500 text-xl"></i> Дивитись YouTube
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ПРОЄКТИ -->
+    <section id="projects" class="py-24 relative border-t border-white/5 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-wide">Наші проєкти</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-transparent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Проєкт 1: Радіо -->
+                <div class="bg-slate-800/50 backdrop-blur p-10 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-all group hover:-translate-y-2">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-900 text-white rounded-2xl flex items-center justify-center text-4xl mb-8 shadow-lg shadow-blue-900/50">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-white">Радіо RESPECT</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Мережа FM-станцій (Острог 92,3 МГц, Радивилів 89,6 МГц) та онлайн-мовлення 24/7. Локальні новини та відмінна українська музика.
+                    </p>
+                    <button onclick="togglePlayer()" class="text-blue-400 font-bold text-sm uppercase tracking-widest flex items-center gap-2 group-hover:text-blue-300 transition-colors">
+                        Слухати ефір <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Проєкт 2: YouTube -->
+                <div class="bg-slate-800/50 backdrop-blur p-10 rounded-[2rem] border border-white/5 hover:border-red-500/30 transition-all group hover:-translate-y-2">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-900 text-white rounded-2xl flex items-center justify-center text-4xl mb-8 shadow-lg shadow-red-900/50">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-white">RIVNE LIVE</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Політичні ток-шоу, інтерв’ю та репортажі. Понад 4400 підписників та охоплення аудиторії до 700 тис. осіб. Найсвіжіша аналітика регіону.
+                    </p>
+                    <a href="https://www.youtube.com/@RIVNELIVE" target="_blank" class="text-red-400 font-bold text-sm uppercase tracking-widest flex items-center gap-2 group-hover:text-red-300 transition-colors">
+                        Перейти на канал <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Проєкт 3: Продакшн/Портал -->
+                <div class="bg-slate-800/50 backdrop-blur p-10 rounded-[2rem] border border-white/5 hover:border-slate-400/30 transition-all group hover:-translate-y-2">
+                    <div class="w-20 h-20 bg-gradient-to-br from-slate-600 to-slate-900 text-white rounded-2xl flex items-center justify-center text-4xl mb-8 shadow-lg shadow-slate-900/50">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-white">Продакшн</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Створення кіно- та телепродукції, виробництво аудіороликів. Інформаційний супровід територіальних громад та партнерів.
+                    </p>
+                    <a href="#contacts" class="text-slate-300 font-bold text-sm uppercase tracking-widest flex items-center gap-2 group-hover:text-white transition-colors">
+                        Замовити послуги <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YOUTUBE SECTION -->
+    <section id="youtube" class="py-24 border-t border-white/5 relative overflow-hidden">
+        <!-- Декоративний фон для ютуб секції -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-red-600/10 blur-[100px] rounded-full z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-900/30 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-widest mb-6">
+                    <i class="fab fa-youtube"></i> Відео-архів
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight text-white uppercase">Дивіться нас онлайн на <span class="text-red-500">RIVNE LIVE</span></h2>
+                <p class="text-slate-400 mb-8 leading-relaxed text-lg font-light">
+                    Ми висвітлюємо найважливіші події регіону. Аналітика, прямі включення та ексклюзивні гості у програмах "PROПолітику 2.0" та "Про важливе".
+                </p>
+                <div class="flex items-center gap-6 p-6 bg-slate-800/50 rounded-2xl border border-white/5 w-fit">
+                    <div class="text-center pr-6 border-r border-white/10">
+                        <p class="text-3xl font-black text-white">4.4K+</p>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Підписників</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-3xl font-black text-white">400+</p>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Відео</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative group">
+                <div class="aspect-video bg-slate-900 rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(227,28,37,0.15)] border border-white/10 relative z-10 p-2">
+                    <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/videoseries?list=PLZp7NqR_r9D4vKq1YIqOQ6-T0Yx1rU-O4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ДОНАТ / ПІДТРИМКА -->
+    <section id="support" class="py-24 border-t border-white/5 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-[3rem] p-10 md:p-16 shadow-2xl border border-white/10 text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-red-500 to-blue-500"></div>
+                
+                <h2 class="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tight text-white">Підтримати Медіа-Центр</h2>
+                <p class="text-slate-400 mb-12 max-w-2xl mx-auto text-lg font-light">
+                    Ми — громадська неприбуткова організація. Ваш внесок допомагає нам залишатися незалежними, розвивати українське медіа та створювати якісний контент.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div class="p-8 bg-slate-950/50 rounded-[2rem] border border-white/5 hover:border-slate-600 transition-colors">
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Реквізити (ПриватБанк)</p>
+                        <p class="font-mono text-sm md:text-base break-all font-bold text-white mb-2">UA753052990000026006000701997</p>
+                        <p class="text-sm text-slate-400">ЄДРПОУ: <span class="text-white">44043771</span></p>
+                        <p class="text-xs text-slate-500 mt-4">Одержувач: ГО "МЕДІА-ЦЕНТР "ТРЕТЯ СТОЛИЦЯ"</p>
+                    </div>
+                    
+                    <div class="p-8 bg-slate-950/50 rounded-[2rem] border border-white/5 hover:border-slate-600 transition-colors flex flex-col justify-center items-center text-center">
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Швидкий донат</p>
+                        <a href="https://send.monobank.ua/" target="_blank" class="flex flex-col items-center group">
+                            <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-full flex items-center justify-center text-2xl shadow-lg shadow-purple-900/50 group-hover:scale-110 transition-transform mb-4">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <span class="font-bold text-white group-hover:text-purple-400 transition-colors">Monobank Jar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТИ -->
+    <footer id="contacts" class="pt-24 pb-32 border-t border-white/5 relative bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-16">
+            <div>
+                <!-- Логотип у футері -->
+                <div class="flex items-center gap-3 mb-8">
+                    <img src="TC_logo_2.png" alt="Третя Столиця" class="h-10 w-auto opacity-80" onerror="this.src='https://via.placeholder.com/150x50/0047AB/FFFFFF?text=Третя+Столиця'">
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8 font-light">
+                    м. Рівне, вул. Д.Галицького, 19<br>
+                    БЦ «Полісся», оф. 918
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/radio.respect.ua/" target="_blank" class="w-12 h-12 bg-slate-900 border border-white/10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all"><i class="fab fa-facebook-f text-lg"></i></a>
+                    <a href="https://www.instagram.com/radio_respect" target="_blank" class="w-12 h-12 bg-slate-900 border border-white/10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-pink-600 transition-all"><i class="fab fa-instagram text-lg"></i></a>
+                    <a href="https://t.me/live_rivne" target="_blank" class="w-12 h-12 bg-slate-900 border border-white/10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-400 transition-all"><i class="fab fa-telegram-plane text-lg"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-black mb-8 text-white uppercase tracking-widest">Зв’язок</h4>
+                <ul class="space-y-6 text-slate-400 text-sm">
+                    <li><a href="mailto:info@3capital.info" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-envelope w-8 text-blue-500 text-lg"></i> info@3capital.info</a></li>
+                    <li><a href="tel:+380669029149" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-phone w-8 text-blue-500 text-lg"></i> +38 (066) 902-91-49</a></li>
+                    <li class="flex items-center"><i class="fas fa-globe w-8 text-blue-500 text-lg"></i> www.3capital.info</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-black mb-8 text-white uppercase tracking-widest">Ліцензії</h4>
+                <div class="text-slate-500 text-xs leading-relaxed space-y-4 font-light">
+                    <p>Ідентифікатор медіа L11-01730 (FM-радіо RESPECT)</p>
+                    <p>Ідентифікатор медіа R11-02108 (online-радіо RESPECT UA)</p>
+                    <p>Ідентифікатор медіа R40-04335 (YOUTUBE-канал RIVNE LIVE)</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-24 text-slate-600 text-[10px] uppercase tracking-[0.3em] font-bold">
+            © 2021-2026 ГО "Медіа-Центр "Третя Столиця". Всі права захищені.
+        </div>
+    </footer>
+
+    <!-- СТІКІ ПЛЕЄР (ТЕМНА ТЕМА) -->
+    <div id="player" class="fixed bottom-0 w-full sticky-player transform translate-y-full transition-transform duration-500 z-[60] py-4 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-5">
+                <!-- Анімація еквалайзера -->
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center text-white shadow-[0_0_15px_rgba(0,71,171,0.5)] relative overflow-hidden group">
+                    <i class="fas fa-music z-10 relative group-hover:scale-110 transition-transform"></i>
+                </div>
+                
+                <div class="hidden sm:block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="w-2 h-2 rounded-full bg-red-500 live-indicator"></span>
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Наживо в ефірі</p>
+                    </div>
+                    <p class="font-bold text-white leading-none text-sm sm:text-base">Радіо RESPECT <span class="text-blue-400 font-normal">- Твоя сміливість та перемога!</span></p>
+                </div>
+            </div>
+
+            <!-- Реальний аудіо-потік вставити тут -->
+            <!-- Заміни src на свій реальний Icecast/Shoutcast потік -->
+            <audio id="radio-audio" src="https://stream.radio-respect.com.ua/live"></audio>
+
+            <div class="flex items-center gap-2 sm:gap-6">
+                <!-- Кнопка Play/Pause -->
+                <button onclick="toggleAudio()" id="play-btn" class="w-14 h-14 respect-blue text-white rounded-full flex items-center justify-center text-xl hover:scale-105 active:scale-95 transition-all glow-btn border border-blue-400/30">
+                    <i class="fas fa-play ml-1"></i>
+                </button>
+                
+                <!-- Кнопка закриття -->
+                <button onclick="togglePlayer()" class="text-slate-500 hover:text-white p-3 transition-colors">
+                    <i class="fas fa-chevron-down text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const player = document.getElementById('player');
+        const audio = document.getElementById('radio-audio');
+        const playBtn = document.getElementById('play-btn');
+        let isPlaying = false;
+
+        function togglePlayer() {
+            player.classList.toggle('translate-y-full');
+        }
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.innerHTML = '<i class="fas fa-play ml-1"></i>';
+                playBtn.classList.remove('animate-pulse');
+            } else {
+                // Перевірка, чи не заблоковано браузером (Autoplay policy)
+                let playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    })
+                    .catch(error => {
+                        console.log("Відтворення заблоковано браузером. Користувач має взаємодіяти зі сторінкою.");
+                    });
+                }
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Автоматична прокрутка до секцій
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

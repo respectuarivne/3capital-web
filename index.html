@@ -113,11 +113,15 @@
                 </div>
             </a>
             
-            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-slate-300">
+            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-slate-300 items-center">
                 <a href="#about" class="hover:text-white hover:text-blue-400 transition-colors">Про нас</a>
                 <a href="#projects" class="hover:text-white hover:text-blue-400 transition-colors">Проєкти</a>
                 <a href="#youtube" class="hover:text-white hover:text-blue-400 transition-colors">Rivne Live</a>
-                <a href="#contacts" class="hover:text-white hover:text-blue-400 transition-colors">Контакти</a>
+                
+                <div class="border-l border-white/20 pl-6 ml-2 flex gap-3">
+                    <span class="text-blue-400">UA</span>
+                    <a href="en.html" class="text-slate-500 hover:text-white transition-colors">EN</a>
+                </div>
             </div>
 
             <div class="flex items-center gap-4 z-20">
@@ -133,9 +137,12 @@
                 <a href="#about" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest border-b border-white/5 pb-4">Про нас</a>
                 <a href="#projects" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest border-b border-white/5 pb-4">Проєкти</a>
                 <a href="#youtube" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest border-b border-white/5 pb-4">Rivne Live</a>
-                <a href="#contacts" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest pb-2">Контакти</a>
+                
+                <div class="flex gap-4 pt-2">
+                    <span class="text-blue-400 font-bold uppercase tracking-widest border-b-2 border-blue-400 pb-1">UA</span>
+                    <a href="en.html" class="text-slate-500 font-bold uppercase tracking-widest">EN</a>
+                </div>
             </div>
-        </div>
     </nav>
 
     <header class="pt-32 md:pt-40 pb-20 md:pb-24 px-4 relative mt-10 md:mt-0">

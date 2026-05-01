@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-51GYDX52TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-51GYDX52TM');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Media Center "Third Capital" | Official Website</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.3capital.info/en.html">
+    <meta property="og:title" content="Media Center «Third Capital» | Official Website">
+    <meta property="og:description" content="Independent regional media of modern Ukraine. Listen to Radio RESPECT 24/7 and watch analytics on RIVNE LIVE.">
+    <meta property="og:image" content="https://www.3capital.info/social-cover.jpg">
+
+    <link rel="icon" type="image/png" href="TC_logo_1.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Inter:wght@300;400;600&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        h1, h2, h3, h4, .nav-logo-text { font-family: 'Montserrat', sans-serif; }
+        
+        .glass-nav { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .respect-blue { background-color: #0047AB; }
+        
+        .glow-btn { box-shadow: 0 0 20px rgba(0, 71, 171, 0.4); transition: all 0.3s ease; }
+        .glow-btn:hover { box-shadow: 0 0 30px rgba(0, 71, 171, 0.7); transform: translateY(-2px); }
+        .glow-red { box-shadow: 0 0 20px rgba(227, 28, 37, 0.4); transition: all 0.3s ease; }
+        .glow-red:hover { box-shadow: 0 0 30px rgba(227, 28, 37, 0.7); transform: translateY(-2px); }
+
+        .live-indicator { animation: pulse-live 2s infinite; }
+        @keyframes pulse-live { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
+        .sticky-player { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 -10px 40px rgba(0,0,0,0.5); }
+        .bg-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,71,171,0.15) 0%, rgba(15,23,42,0) 70%); top: -200px; left: -200px; z-index: -1; border-radius: 50%; }
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+    <div class="bg-glow"></div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between relative">
+            <a href="#" class="flex items-center gap-3 group z-20">
+                <img src="TC_logo_1.png" alt="Third Capital Logo" class="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform">
+                <div class="hidden sm:block">
+                    <span class="block font-black text-white text-base md:text-lg leading-none tracking-wide nav-logo-text">THIRD CAPITAL</span>
+                    <span class="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-slate-400 font-bold">Media Center</span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-slate-300 items-center">
+                <a href="#about" class="hover:text-white hover:text-blue-400 transition-colors">About Us</a>
+                <a href="#projects" class="hover:text-white hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#youtube" class="hover:text-white hover:text-blue-400 transition-colors">Rivne Live</a>
+                
+                <div class="border-l border-white/20 pl-6 ml-2 flex gap-3">
+                    <a href="index.html" class="text-slate-500 hover:text-white transition-colors">UA</a>
+                    <span class="text-blue-400">EN</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 z-20">
+                <a href="#support" class="bg-red-600 hover:bg-red-500 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] md:text-xs font-black transition-all glow-red uppercase tracking-wider border border-red-500/50">
+                    Donate
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white focus:outline-none text-2xl p-2">
+                    <i class="fas fa-bars" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-slate-900 border-b border-white/10 flex-col py-6 px-6 gap-6 shadow-2xl transition-all duration-300 origin-top scale-y-0 opacity-0 flex z-10">
+                <a href="#about" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest border-b border-white/5 pb-4">About Us</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest border-b border-white/5 pb-4">Projects</a>
+                <a href="#youtube" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest border-b border-white/5 pb-4">Rivne Live</a>
+                <div class="flex gap-4 pt-2">
+                    <a href="index.html" class="text-slate-500 font-bold uppercase tracking-widest">UA</a>
+                    <span class="text-blue-400 font-bold uppercase tracking-widest border-b-2 border-blue-400 pb-1">EN</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 md:pt-40 pb-20 md:pb-24 px-4 relative mt-10 md:mt-0">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
+                <span class="w-2 h-2 rounded-full bg-blue-500 live-indicator"></span> Broadcasting 24/7
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-tight uppercase tracking-tight">
+                Independent Regional Media <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">of Modern Ukraine</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-slate-400 text-base md:text-xl mb-10 md:mb-12 leading-relaxed font-light px-4">
+                Professional audiovisual content, local radio broadcasting, regional YouTube channel, and production studio. We build bridges between local communities and the world.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4">
+                <button onclick="startRadio()" class="respect-blue text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 glow-btn uppercase tracking-wide w-full sm:w-auto">
+                    <i class="fas fa-play text-xl"></i> Listen to Radio
+                </button>
+                <a href="#youtube" class="bg-slate-800 text-white border border-slate-700 px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-slate-700 transition-all uppercase tracking-wide w-full sm:w-auto">
+                    <i class="fab fa-youtube text-red-500 text-xl"></i> Watch YouTube
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-16 md:py-20 bg-slate-900">
+        <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">About Us & <span class="text-blue-500">Transparency</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">Non-Governmental Organization "Media Center 'Third Capital'" was registered in January 2021 as an independent hub uniting professional journalists, producers, and media managers. We protect the information space and develop hyper-local journalism in Ukraine.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-16">
+                <div class="bg-slate-950 p-6 md:p-8 rounded-[2rem] border border-white/5">
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4"><i class="fas fa-bullseye text-blue-500 mr-2"></i> Our Mission</h3>
+                    <p class="text-slate-400 mb-6 text-sm md:text-base">Fostering the development of independent media and audiovisual arts in Ukraine. We combat disinformation and provide our audience with objective, fact-based reporting.</p>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-4">Board & Management</h3>
+                    <p class="text-slate-400 mb-4 text-sm md:text-base">Founded by practitioners with deep backgrounds in media production and academic journalism. Governance is executed through independent bodies: General Assembly, Board of Directors, Supervisory, and Editorial Boards.</p>
+                    <ul class="text-slate-300 space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3"></i> <span><strong>Nataliia Demediuk</strong> — Head of the Board, CEO, Journalist</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3"></i> <span><strong>Oleksandr Khytrov</strong> — Board Member, Producer, Media Manager</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3"></i> <span><strong>Viktor Tereshchuk</strong> — Board Member, Program Director</span></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-6"><i class="fas fa-file-signature text-blue-500 mr-2"></i> Official Policies (Governance)</h3>
+
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Editorial Policy</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Ensuring objectivity, accuracy, and protection of vulnerable groups. Strict prohibition of censorship, hidden advertising, and sponsor influence on content.</p>
+                            <a href="Editorial_Policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> View Original (UA)</a>
+                        </div>
+                    </details>
+
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Anti-corruption Policy</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Zero-tolerance policy towards corruption, bribery, fraud, or misuse of grant funds. Strict financial accountability.</p>
+                            <a href="Anti-corruption_policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> View Original (UA)</a>
+                        </div>
+                    </details>
+
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Gender Equality & Social Inclusion</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Ensuring equal opportunities and fostering an inclusive environment. Implementation of gender-sensitive approaches in media production.</p>
+                            <a href="Gender_Equality_and_Social_Inclusion.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> View Original (UA)</a>
+                        </div>
+                    </details>
+
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Conflict of Interest Policy</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Procedures to prevent private interests from influencing decision-making. Mandatory declaration of real and potential conflicts.</p>
+                            <a href="Conflict_of_interest_policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> View Original (UA)</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 md:py-24 relative border-t border-white/5 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-wide">Our Impact & Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-transparent mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-slate-800/50 backdrop-blur p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-all group hover:-translate-y-2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-600 to-blue-900 text-white rounded-2xl flex items-center justify-center text-3xl md:text-4xl mb-6 md:mb-8 shadow-lg shadow-blue-900/50">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-black mb-4 text-white">Radio RESPECT UA</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Local FM station covering Rivne and Khmelnytskyi regions, plus 24/7 global online streaming. Trusted local news and Ukrainian music.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-red-500/30 transition-all group hover:-translate-y-2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-red-600 to-red-900 text-white rounded-2xl flex items-center justify-center text-3xl md:text-4xl mb-6 md:mb-8 shadow-lg shadow-red-900/50">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-black mb-4 text-white">RIVNE LIVE</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Political talk shows, interviews, and deep analytics. Reaching up to 700,000 viewers locally to shape the democratic agenda.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-slate-400/30 transition-all group hover:-translate-y-2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-slate-600 to-slate-900 text-white rounded-2xl flex items-center justify-center text-3xl md:text-4xl mb-6 md:mb-8 shadow-lg shadow-slate-900/50">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-black mb-4 text-white">Production Studio</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Full-cycle creation of professional audiovisual content, supporting local communities and civil society initiatives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" class="py-16 md:py-24 border-t border-white/5 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto px-4 md:px-6">
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 shadow-2xl border border-white/10 text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-red-500 to-blue-500"></div>
+                
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black mb-4 md:mb-6 uppercase tracking-tight text-white">Support Independent Media</h2>
+                <p class="text-slate-400 mb-8 md:mb-12 max-w-2xl mx-auto text-sm md:text-lg font-light">
+                    Your contribution helps us remain independent, develop Ukrainian media, and create high-quality, truthful content.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-left">
+                    <div class="p-6 md:p-8 bg-slate-950/50 rounded-2xl md:rounded-[2rem] border border-white/5 hover:border-slate-600 transition-colors">
+                        <p class="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 md:mb-3">Bank Details (PrivatBank)</p>
+                        <p class="font-mono text-xs sm:text-sm md:text-base break-all font-bold text-white mb-2">UA753052990000026006000701997</p>
+                        <p class="text-xs md:text-sm text-slate-400">Registry Code: <span class="text-white">44043771</span></p>
+                        <p class="text-[10px] md:text-xs text-slate-500 mt-3 md:mt-4">Recipient: NGO "MEDIA CENTER THIRD CAPITAL"</p>
+                    </div>
+                    
+                    <div class="p-6 md:p-8 bg-slate-950/50 rounded-2xl md:rounded-[2rem] border border-white/5 hover:border-slate-600 transition-colors flex flex-col justify-center items-center text-center">
+                        <p class="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 md:mb-4">Secure Online Donation</p>
+                        <a href="https://secure.wayforpay.com/donate/d58a353840098" target="_blank" class="flex flex-col items-center group">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-full flex items-center justify-center text-xl md:text-2xl shadow-lg shadow-blue-900/50 group-hover:scale-110 transition-transform mb-3 md:mb-4">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <span class="font-bold text-white group-hover:text-blue-400 transition-colors text-sm md:text-base">WayForPay (International)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacts" class="pt-16 md:pt-24 pb-28 md:pb-32 border-t border-white/5 relative bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
+            <div>
+                <div class="flex items-center gap-3 mb-6 md:mb-8">
+                    <img src="TC_logo_2.png" alt="Third Capital" class="h-8 md:h-10 w-auto opacity-80">
+                </div>
+                <p class="text-slate-400 text-xs md:text-sm leading-relaxed mb-6 md:mb-8 font-light">
+                    19 D. Halytskoho St.,<br>
+                    Business Center "Halytskyi", Office 918<br>
+                    Rivne, Ukraine
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="text-base md:text-lg font-black mb-6 md:mb-8 text-white uppercase tracking-widest">Contact Us</h4>
+                <ul class="space-y-3 md:space-y-4 text-slate-400 text-xs md:text-sm">
+                    <li><a href="mailto:info@3capital.info" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-envelope w-6 md:w-8 text-blue-500"></i> info@3capital.info</a></li>
+                    <li><a href="mailto:pr@radio-respect.com.ua" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-envelope w-6 md:w-8 text-blue-500"></i> pr@radio-respect.com.ua</a></li>
+                    <li><a href="tel:+380669029149" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-phone w-6 md:w-8 text-blue-500"></i> +38 (066) 902-91-49</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-base md:text-lg font-black mb-6 md:mb-8 text-white uppercase tracking-widest">Registrations</h4>
+                <div class="text-slate-500 text-[10px] md:text-xs leading-relaxed space-y-3 md:space-y-4 font-light">
+                    <p>License of the National Council of Ukraine on Television and Radio Broadcasting No. 01730-m</p>
+                    <p>NGO Registration Number (ЄДРПОУ): 44043771</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-16 md:mt-24 text-slate-600 text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold px-4">
+            © 2021-2026 NGO "Media Center 'Third Capital'". All rights reserved.
+        </div>
+    </footer>
+
+    <div id="player" class="fixed bottom-0 w-full sticky-player transform translate-y-full transition-transform duration-500 z-[60] py-3 md:py-4 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3 md:gap-5">
+                <div class="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl md:rounded-2xl flex items-center justify-center text-white relative overflow-hidden group flex-shrink-0">
+                    <i class="fas fa-music z-10 relative group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="block">
+                    <div class="flex items-center gap-2 mb-0.5 md:mb-1">
+                        <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-red-500 live-indicator"></span>
+                        <p class="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest hidden sm:block">Live Broadcasting</p>
+                    </div>
+                    <p class="font-bold text-white text-xs sm:text-sm md:text-base">Radio RESPECT UA</p>
+                </div>
+            </div>
+            <audio id="radio-audio" src="https://stream.radiodim.com/stream/radio-respect-radiodim"></audio>
+            <div class="flex items-center gap-2 sm:gap-6">
+                <button onclick="toggleAudio()" id="play-btn" class="w-10 h-10 md:w-14 md:h-14 respect-blue text-white rounded-full flex items-center justify-center hover:scale-105 transition-all glow-btn">
+                    <i class="fas fa-play ml-1"></i>
+                </button>
+                <button onclick="togglePlayer()" class="text-slate-500 hover:text-white p-2 md:p-3 transition-colors">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const player = document.getElementById('player');
+        const audio = document.getElementById('radio-audio');
+        const playBtn = document.getElementById('play-btn');
+        let isPlaying = false;
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            if (menu.classList.contains('scale-y-0')) {
+                menu.classList.remove('scale-y-0', 'opacity-0');
+                menu.classList.add('scale-y-100', 'opacity-100');
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                menu.classList.replace('scale-y-100', 'scale-y-0');
+                menu.classList.replace('opacity-100', 'opacity-0');
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        }
+
+        function startRadio() {
+            player.classList.remove('translate-y-full');
+            if (!isPlaying) toggleAudio();
+        }
+
+        function togglePlayer() { player.classList.toggle('translate-y-full'); }
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.innerHTML = '<i class="fas fa-play ml-1"></i>';
+            } else {
+                audio.play().then(_ => {
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }).catch(e => console.log("Autoplay blocked."));
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+</html>

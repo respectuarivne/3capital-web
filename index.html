@@ -34,7 +34,7 @@
         
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #0f172a; /* Сланцево-чорний */
+            background-color: #0f172a; 
             color: #f8fafc;
         }
         
@@ -49,7 +49,7 @@
         }
 
         .respect-blue { background-color: #0047AB; }
-        .respect-text { color: #3b82f6; } /* Світліший синій для тексту на темному тлі */
+        .respect-text { color: #3b82f6; } 
         
         .glow-btn {
             box-shadow: 0 0 20px rgba(0, 71, 171, 0.4);
@@ -79,7 +79,6 @@
             100% { opacity: 1; }
         }
 
-        /* Стилі для радіо-плеєра */
         .sticky-player {
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
@@ -87,7 +86,6 @@
             box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
         }
 
-        /* Градієнтний акцент на фоні */
         .bg-glow {
             position: absolute;
             width: 600px;
@@ -102,18 +100,16 @@
 </head>
 <body class="relative overflow-x-hidden">
 
-    <!-- Фоновий акцент -->
     <div class="bg-glow"></div>
 
-    <!-- НАВІГАЦІЯ -->
     <nav class="fixed top-0 w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-            <!-- Логотип (Використовуємо завантажений файл) -->
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="TC_logo_1.png" alt="Третя Столиця Логотип" class="h-12 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://via.placeholder.com/150x50/0047AB/FFFFFF?text=Третя+Столиця'">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between relative">
+            
+            <a href="#" class="flex items-center gap-3 group z-20">
+                <img src="TC_logo_1.png" alt="Третя Столиця Логотип" class="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://via.placeholder.com/150x50/0047AB/FFFFFF?text=Третя+Столиця'">
                 <div class="hidden sm:block">
-                    <span class="block font-black text-white text-lg leading-none tracking-wide nav-logo-text">ТРЕТЯ СТОЛИЦЯ</span>
-                    <span class="text-[9px] uppercase tracking-[0.2em] text-slate-400 font-bold">Медіа-Центр</span>
+                    <span class="block font-black text-white text-base md:text-lg leading-none tracking-wide nav-logo-text">ТРЕТЯ СТОЛИЦЯ</span>
+                    <span class="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-slate-400 font-bold">Медіа-Центр</span>
                 </div>
             </a>
             
@@ -124,156 +120,168 @@
                 <a href="#contacts" class="hover:text-white hover:text-blue-400 transition-colors">Контакти</a>
             </div>
 
-            <a href="#support" class="bg-red-600 hover:bg-red-500 text-white px-6 py-2.5 rounded-full text-xs font-black transition-all glow-red uppercase tracking-wider border border-red-500/50">
-                Підтримати
-            </a>
+            <div class="flex items-center gap-4 z-20">
+                <a href="#support" class="bg-red-600 hover:bg-red-500 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] md:text-xs font-black transition-all glow-red uppercase tracking-wider border border-red-500/50">
+                    Підтримати
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white focus:outline-none text-2xl p-2">
+                    <i class="fas fa-bars" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-slate-900 border-b border-white/10 flex-col py-6 px-6 gap-6 shadow-2xl transition-all duration-300 origin-top scale-y-0 opacity-0 flex z-10">
+                <a href="#about" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest border-b border-white/5 pb-4">Про нас</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest border-b border-white/5 pb-4">Проєкти</a>
+                <a href="#youtube" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest border-b border-white/5 pb-4">Rivne Live</a>
+                <a href="#contacts" onclick="toggleMobileMenu()" class="text-base font-bold text-white uppercase tracking-widest pb-2">Контакти</a>
+            </div>
         </div>
     </nav>
 
-    <!-- ГЕЙТВЕЙ (HERO) -->
-    <header class="pt-40 pb-24 px-4 relative">
+    <header class="pt-32 md:pt-40 pb-20 md:pb-24 px-4 relative mt-10 md:mt-0">
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
                 <span class="w-2 h-2 rounded-full bg-blue-500 live-indicator"></span> 24/7 В Ефірі
             </div>
             
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight uppercase tracking-tight">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-tight uppercase tracking-tight">
                 Нові регіональні медіа <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">сучасної України</span>
             </h1>
             
-            <p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl mb-12 leading-relaxed font-light">
+            <p class="max-w-2xl mx-auto text-slate-400 text-base md:text-xl mb-10 md:mb-12 leading-relaxed font-light px-4">
                 Професійний аудіовізуальний контент, локальне радіомовлення та онлайн-радіо, регіональний ютуб-канал та продакшн-студія.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <button onclick="togglePlayer()" class="respect-blue text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 glow-btn uppercase tracking-wide">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4">
+                <button onclick="startRadio()" class="respect-blue text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 glow-btn uppercase tracking-wide w-full sm:w-auto">
                     <i class="fas fa-play text-xl"></i> Слухати Радіо
                 </button>
-                <a href="#youtube" class="bg-slate-800 text-white border border-slate-700 px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-slate-700 transition-all uppercase tracking-wide">
+                <a href="#youtube" class="bg-slate-800 text-white border border-slate-700 px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-slate-700 transition-all uppercase tracking-wide w-full sm:w-auto">
                     <i class="fab fa-youtube text-red-500 text-xl"></i> Дивитись YouTube
                 </a>
             </div>
         </div>
     </header>
-<section id="about" class="py-20 bg-slate-900">
-    <div class="container mx-auto px-6 max-w-6xl">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">Про нас та <span class="text-blue-500">Прозорість</span></h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Громадська організація «Медіа-Центр «Третя столиця» зареєстрована у січні 2021 року як незалежний хаб, який об'єднує професійних журналістів, продюсерів та творців контенту. Ми створили якісні локальні та регіональні медіа, захищаємо інформаційний простір та розвиваємо гіперлокальну журналістику в Україні.</p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            <div class="bg-slate-950 p-8 rounded-[2rem] border border-white/5">
-                <h3 class="text-2xl font-bold text-white mb-4"><i class="fas fa-bullseye text-blue-500 mr-2"></i> Наша місія</h3>
-                <p class="text-slate-400 mb-6">Сприяння розвитку незалежних засобів масової інформації та аудіовізуального мистецтва в Україні. Ми будуємо мости між локальними громадами та світом, забезпечуючи аудиторію об'єктивною інформацією.</p>
-                <h3 class="text-xl font-bold text-white mb-4">Управління та Команда</h3>
-                <p class="text-slate-400 mb-4">Медіа-Центр "Третя столиця" заснований практиками — журналістами, телерадіоведучими, медіаменеджерами та продюсерами. ГО «Медіа-Центр «Третя столиця» - це неприбуткова громадська організація. Усі кошти від комерційної діяльності йдуть на розвиток організації та медіа. Управління здійснюється через незалежні органи: Загальні збори, Правління, Наглядову та Редакційну ради.</p>
-                <ul class="text-slate-300 space-y-2">
-                    <li><i class="fas fa-check text-blue-500 mr-2"></i> <strong>Наталія Демедюк</strong> — голова ГО, генеральна директорка, журналістка та ведуча телерадіопрограм</li>
-                    <li><i class="fas fa-check text-blue-500 mr-2"></i> <strong>Олександр Хитров</strong> — продюсер, журналіст, ведучий телерадіопрограм </li>
-                    <li><i class="fas fa-check text-blue-500 mr-2"></i> <strong>Віктор Терещук</strong> — програмний директор, журналіст, ведучий телерадіопрограм</li>
-                </ul>
+    <section id="about" class="py-16 md:py-20 bg-slate-900">
+        <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">Про нас та <span class="text-blue-500">Прозорість</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">Громадська організація «Медіа-Центр «Третя столиця» зареєстрована у січні 2021 року як незалежний хаб, який об'єднує професійних журналістів, продюсерів та творців контенту. Ми створили якісні локальні та регіональні медіа, захищаємо інформаційний простір та розвиваємо гіперлокальну журналістику в Україні.</p>
             </div>
 
-            <div class="space-y-4">
-                <h3 class="text-2xl font-bold text-white mb-6"><i class="fas fa-file-signature text-blue-500 mr-2"></i> Офіційні політики (Governance)</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-16">
+                <div class="bg-slate-950 p-6 md:p-8 rounded-[2rem] border border-white/5">
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4"><i class="fas fa-bullseye text-blue-500 mr-2"></i> Наша місія</h3>
+                    <p class="text-slate-400 mb-6 text-sm md:text-base">Сприяння розвитку незалежних засобів масової інформації та аудіовізуального мистецтва в Україні. Ми будуємо мости між локальними громадами та світом, забезпечуючи аудиторію об'єктивною інформацією.</p>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-4">Управління та Команда</h3>
+                    <p class="text-slate-400 mb-4 text-sm md:text-base">Медіа-Центр "Третя столиця" заснований практиками — журналістами, телерадіоведучими, медіаменеджерами та продюсерами. ГО «Медіа-Центр «Третя столиця» - це неприбуткова громадська організація. Усі кошти від комерційної діяльності йдуть на розвиток організації та медіа. Управління здійснюється через незалежні органи: Загальні збори, Правління, Наглядову та Редакційну ради.</p>
+                    <ul class="text-slate-300 space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3"></i> <span><strong>Наталія Демедюк</strong> — голова ГО, генеральна директорка, журналістка та ведуча телерадіопрограм</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3"></i> <span><strong>Олександр Хитров</strong> — продюсер, журналіст, ведучий телерадіопрограм</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3"></i> <span><strong>Віктор Терещук</strong> — програмний директор, журналіст, ведучий телерадіопрограм</span></li>
+                    </ul>
+                </div>
 
-                <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-bold">
-                        <span>Редакційна політика (Editorial Policy)</span>
-                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <div class="p-6 pt-0 text-slate-400 text-sm border-t border-white/5 mt-4">
-                        <p class="mb-4">Ми забезпечуємо об'єктивність, достовірність та захист вразливих груп. Заборонена цензура, прихована реклама ("джинса") та вплив спонсорів на контент.</p>
-                        <a href="Editorial_Policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
-                    </div>
-                </details>
+                <div class="space-y-4">
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-6"><i class="fas fa-file-signature text-blue-500 mr-2"></i> Офіційні політики (Governance)</h3>
 
-                <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-bold">
-                        <span>Антикорупційна політика (Anti-corruption)</span>
-                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <div class="p-6 pt-0 text-slate-400 text-sm border-t border-white/5 mt-4">
-                        <p class="mb-4">Організація декларує політику «нульової толерантності» до корупції, хабарництва, шахрайства чи нецільового використання грантових коштів.</p>
-                        <a href="Anti-corruption_policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
-                    </div>
-                </details>
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Редакційна політика (Editorial Policy)</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Ми забезпечуємо об'єктивність, достовірність та захист вразливих груп. Заборонена цензура, прихована реклама ("джинса") та вплив спонсорів на контент.</p>
+                            <a href="Editorial_Policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
+                        </div>
+                    </details>
 
-                <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-bold">
-                        <span>Гендерна політика та недискримінація (Gender Equality & Inclusion)</span>
-                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <div class="p-6 pt-0 text-slate-400 text-sm border-t border-white/5 mt-4">
-                        <p class="mb-4">Забезпечення рівних можливостей та створення інклюзивного середовища. Нульова толерантність до будь-яких форм дискримінації. Використання гендерно чутливих підходів та інклюзивної мови у виробництві медіа-контенту.</p>
-                        <a href="Gender_Equality_and_Social_Inclusion.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
-                    </div>
-                </details>
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Антикорупційна політика (Anti-corruption)</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Організація декларує політику «нульової толерантності» до корупції, хабарництва, шахрайства чи нецільового використання грантових коштів.</p>
+                            <a href="Anti-corruption_policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
+                        </div>
+                    </details>
 
-                <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-bold">
-                        <span>Конфлікт інтересів (Conflict of Interest)</span>
-                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <div class="p-6 pt-0 text-slate-400 text-sm border-t border-white/5 mt-4">
-                        <p class="mb-4">Процедура запобігання впливу приватних інтересів на прийняття рішень від імені Організації. Обов'язкове декларування реального та потенційного конфлікту.</p>
-                        <a href="Conflict_of_interest_policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
-                    </div>
-                </details>
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Гендерна політика (Gender Equality & Inclusion)</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Забезпечення рівних можливостей та створення інклюзивного середовища. Нульова толерантність до будь-яких форм дискримінації. Використання гендерно чутливих підходів та інклюзивної мови у виробництві медіа-контенту.</p>
+                            <a href="Gender_Equality_and_Social_Inclusion.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
+                        </div>
+                    </details>
 
-                <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-bold">
-                        <span>Політика конфіденційності (Privacy Policy)</span>
-                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <div class="p-6 pt-0 text-slate-400 text-sm border-t border-white/5 mt-4">
-                        <p class="mb-4">Збір лише необхідних даних. Безпека фінансових транзакцій (донатів) через партнерські шлюзи. Знеособлена аналітика.</p>
-                        <a href="Privacy_policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
-                    </div>
-                </details>
-                
-                <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-bold">
-                        <span>Структура власності (Ownership Structure)</span>
-                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <div class="p-6 pt-0 text-slate-400 text-sm border-t border-white/5 mt-4">
-                        <p class="mb-4">Офіційна структура управління та власності суб'єкта інформаційної діяльності відповідно до вимог регулятора - Національної Ради України з питань телебачення та радіомовлення.</p>
-                        <a href="Ownership_Structure_3C.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
-                    </div>
-                </details>
-    </div>
-</section>
-    <!-- ПРОЄКТИ -->
-    <section id="projects" class="py-24 relative border-t border-white/5 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-20">
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Конфлікт інтересів (Conflict of Interest)</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Процедура запобігання впливу приватних інтересів на прийняття рішень від імені Організації. Обов'язкове декларування реального та потенційного конфлікту.</p>
+                            <a href="Conflict_of_interest_policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
+                        </div>
+                    </details>
+
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Політика конфіденційності (Privacy Policy)</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Збір лише необхідних даних. Безпека фінансових транзакцій (донатів) через партнерські шлюзи. Знеособлена аналітика.</p>
+                            <a href="Privacy_policy_ThirdCapital_2026.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
+                        </div>
+                    </details>
+                    
+                    <details class="group bg-slate-950 rounded-2xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer text-white font-bold text-sm md:text-base">
+                            <span class="pr-4">Структура власності (Ownership Structure)</span>
+                            <span class="transition group-open:rotate-180 flex-shrink-0"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-5 md:p-6 pt-0 text-slate-400 text-xs md:text-sm border-t border-white/5 mt-2 md:mt-4">
+                            <p class="mb-4">Офіційна структура управління та власності суб'єкта інформаційної діяльності відповідно до вимог регулятора - Національної Ради України з питань телебачення та радіомовлення.</p>
+                            <a href="Ownership_Structure_3C.pdf" target="_blank" class="inline-block text-blue-400 hover:text-blue-300 font-semibold"><i class="fas fa-file-pdf mr-1"></i> Переглянути оригінал</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 md:py-24 relative border-t border-white/5 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-20">
                 <h2 class="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-wide">Наші проєкти</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-transparent mx-auto"></div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Проєкт 1: Радіо -->
-                <div class="bg-slate-800/50 backdrop-blur p-10 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-all group hover:-translate-y-2">
-                    <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-900 text-white rounded-2xl flex items-center justify-center text-4xl mb-8 shadow-lg shadow-blue-900/50">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-slate-800/50 backdrop-blur p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-all group hover:-translate-y-2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-600 to-blue-900 text-white rounded-2xl flex items-center justify-center text-3xl md:text-4xl mb-6 md:mb-8 shadow-lg shadow-blue-900/50">
                         <i class="fas fa-broadcast-tower"></i>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 text-white">Радіо RESPECT UA</h3>
+                    <h3 class="text-xl md:text-2xl font-black mb-4 text-white">Радіо RESPECT UA</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-8">
                         Локальна FM-радіостанція на частоті 92,3 МГц у Рівненській та Хмельницькій областях, онлайн-радіо 24/7. Місцеві новини та відмінна українська музика.
                     </p>
-                    <button onclick="togglePlayer()" class="text-blue-400 font-bold text-sm uppercase tracking-widest flex items-center gap-2 group-hover:text-blue-300 transition-colors">
+                    <button onclick="startRadio()" class="text-blue-400 font-bold text-sm uppercase tracking-widest flex items-center gap-2 group-hover:text-blue-300 transition-colors">
                         Слухати ефір <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
                     </button>
                 </div>
 
-                <!-- Проєкт 2: YouTube -->
-                <div class="bg-slate-800/50 backdrop-blur p-10 rounded-[2rem] border border-white/5 hover:border-red-500/30 transition-all group hover:-translate-y-2">
-                    <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-900 text-white rounded-2xl flex items-center justify-center text-4xl mb-8 shadow-lg shadow-red-900/50">
+                <div class="bg-slate-800/50 backdrop-blur p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-red-500/30 transition-all group hover:-translate-y-2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-red-600 to-red-900 text-white rounded-2xl flex items-center justify-center text-3xl md:text-4xl mb-6 md:mb-8 shadow-lg shadow-red-900/50">
                         <i class="fab fa-youtube"></i>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 text-white">RIVNE LIVE</h3>
+                    <h3 class="text-xl md:text-2xl font-black mb-4 text-white">RIVNE LIVE</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-8">
                         Політичні ток-шоу, інтерв’ю та репортажі. Понад 4400 підписників та охоплення аудиторії до 700 тис. осіб. Найсвіжіша аналітика регіону.
                     </p>
@@ -282,12 +290,11 @@
                     </a>
                 </div>
 
-                <!-- Проєкт 3: Продакшн/Портал -->
-                <div class="bg-slate-800/50 backdrop-blur p-10 rounded-[2rem] border border-white/5 hover:border-slate-400/30 transition-all group hover:-translate-y-2">
-                    <div class="w-20 h-20 bg-gradient-to-br from-slate-600 to-slate-900 text-white rounded-2xl flex items-center justify-center text-4xl mb-8 shadow-lg shadow-slate-900/50">
+                <div class="bg-slate-800/50 backdrop-blur p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-slate-400/30 transition-all group hover:-translate-y-2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-slate-600 to-slate-900 text-white rounded-2xl flex items-center justify-center text-3xl md:text-4xl mb-6 md:mb-8 shadow-lg shadow-slate-900/50">
                         <i class="fas fa-video"></i>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 text-white">Продакшн-студія</h3>
+                    <h3 class="text-xl md:text-2xl font-black mb-4 text-white">Продакшн-студія</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-8">
                         Створення аудіовізуального контенту. Рекламна інтеграція. Інформаційний супровід територіальних громад та партнерів.
                     </p>
@@ -299,106 +306,101 @@
         </div>
     </section>
 
-    <!-- YOUTUBE SECTION -->
-    <section id="youtube" class="py-24 border-t border-white/5 relative overflow-hidden">
-        <!-- Декоративний фон для ютуб секції -->
-        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-red-600/10 blur-[100px] rounded-full z-0"></div>
+    <section id="youtube" class="py-16 md:py-24 border-t border-white/5 relative overflow-hidden">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-red-600/10 blur-[100px] rounded-full z-0"></div>
         
-        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-10 md:gap-16 items-center relative z-10">
             <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-900/30 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-widest mb-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-900/30 border border-red-500/30 text-red-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6">
                     <i class="fab fa-youtube"></i> Відео-архів
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight text-white uppercase">Дивіться нас онлайн на <span class="text-red-500">RIVNE LIVE</span></h2>
-                <p class="text-slate-400 mb-8 leading-relaxed text-lg font-light">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-6 leading-tight text-white uppercase">Дивіться нас онлайн на <br class="hidden sm:block"><span class="text-red-500">RIVNE LIVE</span></h2>
+                <p class="text-slate-400 mb-8 leading-relaxed text-base md:text-lg font-light">
                     Ми говоримо про найважливіші події регіону. Аналітика, місцеві новини, прямі включення та ексклюзивні гості у ток-шоу "Про важливе з Наталею Демедюк" та "МедіаПолітика".
                 </p>
-                <div class="flex items-center gap-6 p-6 bg-slate-800/50 rounded-2xl border border-white/5 w-fit">
-                    <div class="text-center pr-6 border-r border-white/10">
-                        <p class="text-3xl font-black text-white">4.4K+</p>
-                        <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Підписників</p>
+                <div class="flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-slate-800/50 rounded-2xl border border-white/5 w-fit">
+                    <div class="text-center pr-4 md:pr-6 border-r border-white/10">
+                        <p class="text-2xl md:text-3xl font-black text-white">4.4K+</p>
+                        <p class="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest mt-1">Підписників</p>
                     </div>
-                    <div class="text-center">
-                        <p class="text-3xl font-black text-white">2.5К+</p>
-                        <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Відео</p>
+                    <div class="text-center pl-2 md:pl-0">
+                        <p class="text-2xl md:text-3xl font-black text-white">2.5К+</p>
+                        <p class="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest mt-1">Відео</p>
                     </div>
                 </div>
             </div>
             
-            <div class="relative group">
-                <div class="aspect-video bg-slate-900 rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(227,28,37,0.15)] border border-white/10 relative z-10 p-2">
-                    <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/videoseries?list=UUXw5LoMfg2vOCvlgIzyg3oA" frameborder="0" allowfullscreen></iframe>
+            <div class="relative group mt-8 lg:mt-0">
+                <div class="aspect-video bg-slate-900 rounded-[1rem] md:rounded-[2rem] overflow-hidden shadow-[0_0_30px_rgba(227,28,37,0.15)] border border-white/10 relative z-10 p-1 md:p-2">
+                    <iframe class="w-full h-full rounded-lg md:rounded-2xl" src="https://www.youtube.com/embed/videoseries?list=UUXw5LoMfg2vOCvlgIzyg3oA" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ДОНАТ / ПІДТРИМКА -->
-    <section id="support" class="py-24 border-t border-white/5 bg-slate-900/50">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-[3rem] p-10 md:p-16 shadow-2xl border border-white/10 text-center relative overflow-hidden">
+    <section id="support" class="py-16 md:py-24 border-t border-white/5 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto px-4 md:px-6">
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 shadow-2xl border border-white/10 text-center relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-red-500 to-blue-500"></div>
                 
-                <h2 class="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tight text-white">Підтримати Медіа-Центр</h2>
-                <p class="text-slate-400 mb-12 max-w-2xl mx-auto text-lg font-light">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black mb-4 md:mb-6 uppercase tracking-tight text-white">Підтримати Медіа-Центр</h2>
+                <p class="text-slate-400 mb-8 md:mb-12 max-w-2xl mx-auto text-sm md:text-lg font-light">
                     Медіа-Центр "Третя столиця" — громадська неприбуткова організація. Ваш внесок допомагає нам залишатися незалежними, розвивати українське медіа та створювати якісний контент.
                 </p>
                 
-                <div class="grid md:grid-cols-2 gap-6 text-left">
-                    <div class="p-8 bg-slate-950/50 rounded-[2rem] border border-white/5 hover:border-slate-600 transition-colors">
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Реквізити (ПриватБанк)</p>
-                        <p class="font-mono text-sm md:text-base break-all font-bold text-white mb-2">UA753052990000026006000701997</p>
-                        <p class="text-sm text-slate-400">ЄДРПОУ: <span class="text-white">44043771</span></p>
-                        <p class="text-xs text-slate-500 mt-4">Одержувач: ГО "МЕДІА-ЦЕНТР "ТРЕТЯ СТОЛИЦЯ"</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-left">
+                    <div class="p-6 md:p-8 bg-slate-950/50 rounded-2xl md:rounded-[2rem] border border-white/5 hover:border-slate-600 transition-colors">
+                        <p class="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 md:mb-3">Реквізити (ПриватБанк)</p>
+                        <p class="font-mono text-xs sm:text-sm md:text-base break-all font-bold text-white mb-2">UA753052990000026006000701997</p>
+                        <p class="text-xs md:text-sm text-slate-400">ЄДРПОУ: <span class="text-white">44043771</span></p>
+                        <p class="text-[10px] md:text-xs text-slate-500 mt-3 md:mt-4">Одержувач: ГО "МЕДІА-ЦЕНТР "ТРЕТЯ СТОЛИЦЯ"</p>
                     </div>
                     
-                    <div class="p-8 bg-slate-950/50 rounded-[2rem] border border-white/5 hover:border-slate-600 transition-colors flex flex-col justify-center items-center text-center">
-    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Швидкий донат</p>
-    <a href="https://secure.wayforpay.com/donate/d58a353840098" target="_blank" class="flex flex-col items-center group">
-        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-full flex items-center justify-center text-2xl shadow-lg shadow-blue-900/50 group-hover:scale-110 transition-transform mb-4">
-            <i class="fas fa-credit-card"></i>
-        </div>
-        <span class="font-bold text-white group-hover:text-blue-400 transition-colors">WayForPay</span>
-    </a>
-</div>
+                    <div class="p-6 md:p-8 bg-slate-950/50 rounded-2xl md:rounded-[2rem] border border-white/5 hover:border-slate-600 transition-colors flex flex-col justify-center items-center text-center">
+                        <p class="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 md:mb-4">Швидкий донат</p>
+                        <a href="https://secure.wayforpay.com/donate/d58a353840098" target="_blank" class="flex flex-col items-center group">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-full flex items-center justify-center text-xl md:text-2xl shadow-lg shadow-blue-900/50 group-hover:scale-110 transition-transform mb-3 md:mb-4">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <span class="font-bold text-white group-hover:text-blue-400 transition-colors text-sm md:text-base">WayForPay</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- КОНТАКТИ -->
-    <footer id="contacts" class="pt-24 pb-32 border-t border-white/5 relative bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-16">
+    <footer id="contacts" class="pt-16 md:pt-24 pb-28 md:pb-32 border-t border-white/5 relative bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
             <div>
-                <!-- Логотип у футері -->
-                <div class="flex items-center gap-3 mb-8">
-                    <img src="TC_logo_2.png" alt="Третя Столиця" class="h-10 w-auto opacity-80" onerror="this.src='https://via.placeholder.com/150x50/0047AB/FFFFFF?text=Третя+Столиця'">
+                <div class="flex items-center gap-3 mb-6 md:mb-8">
+                    <img src="TC_logo_2.png" alt="Третя Столиця" class="h-8 md:h-10 w-auto opacity-80" onerror="this.src='https://via.placeholder.com/150x50/0047AB/FFFFFF?text=Третя+Столиця'">
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed mb-8 font-light">
+                <p class="text-slate-400 text-xs md:text-sm leading-relaxed mb-6 md:mb-8 font-light">
                     м. Рівне, вул. Д.Галицького, 19<br>
                     Бізнес-Центр «Галицький», оф. 918
                 </p>
                 <div class="flex gap-4">
-                    <a href="https://www.facebook.com/radio.respect.ua/" target="_blank" class="w-12 h-12 bg-slate-900 border border-white/10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all"><i class="fab fa-facebook-f text-lg"></i></a>
-                    <a href="https://www.instagram.com/radio_respect" target="_blank" class="w-12 h-12 bg-slate-900 border border-white/10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-pink-600 transition-all"><i class="fab fa-instagram text-lg"></i></a>
-                    <a href="https://t.me/live_rivne" target="_blank" class="w-12 h-12 bg-slate-900 border border-white/10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-400 transition-all"><i class="fab fa-telegram-plane text-lg"></i></a>
+                    <a href="https://www.facebook.com/radio.respect.ua/" target="_blank" class="w-10 h-10 md:w-12 md:h-12 bg-slate-900 border border-white/10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all"><i class="fab fa-facebook-f text-base md:text-lg"></i></a>
+                    <a href="https://www.instagram.com/radio_respect" target="_blank" class="w-10 h-10 md:w-12 md:h-12 bg-slate-900 border border-white/10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-pink-600 transition-all"><i class="fab fa-instagram text-base md:text-lg"></i></a>
+                    <a href="https://t.me/live_rivne" target="_blank" class="w-10 h-10 md:w-12 md:h-12 bg-slate-900 border border-white/10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-400 transition-all"><i class="fab fa-telegram-plane text-base md:text-lg"></i></a>
                 </div>
             </div>
             
             <div>
-                <h4 class="text-lg font-black mb-8 text-white uppercase tracking-widest">Зв’язок</h4>
-                <ul class="space-y-4 text-slate-400 text-sm">
-    <li><a href="mailto:info@3capital.info" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-envelope w-8 text-blue-500 text-lg"></i> info@3capital.info</a></li>
-    <li><a href="mailto:pr@radio-respect.com.ua" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-envelope w-8 text-blue-500 text-lg"></i> pr@radio-respect.com.ua</a></li>
-    <li><a href="tel:+380669029149" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-phone w-8 text-blue-500 text-lg"></i> +38 (066) 902-91-49</a></li>
-    <li><a href="tel:+380974718388" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-phone w-8 text-blue-500 text-lg"></i> +38 (097) 471-83-88</a></li>
-    <li class="flex items-center"><i class="fas fa-globe w-8 text-blue-500 text-lg"></i> www.3capital.info</li>
-</ul>
+                <h4 class="text-base md:text-lg font-black mb-6 md:mb-8 text-white uppercase tracking-widest">Зв’язок</h4>
+                <ul class="space-y-3 md:space-y-4 text-slate-400 text-xs md:text-sm">
+                    <li><a href="mailto:info@3capital.info" class="flex items-center hover:text-blue-400 transition-colors break-all"><i class="fas fa-envelope w-6 md:w-8 text-blue-500 text-base md:text-lg"></i> info@3capital.info</a></li>
+                    <li><a href="mailto:pr@radio-respect.com.ua" class="flex items-center hover:text-blue-400 transition-colors break-all"><i class="fas fa-envelope w-6 md:w-8 text-blue-500 text-base md:text-lg"></i> pr@radio-respect.com.ua</a></li>
+                    <li><a href="tel:+380669029149" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-phone w-6 md:w-8 text-blue-500 text-base md:text-lg"></i> +38 (066) 902-91-49</a></li>
+                    <li><a href="tel:+380974718388" class="flex items-center hover:text-blue-400 transition-colors"><i class="fas fa-phone w-6 md:w-8 text-blue-500 text-base md:text-lg"></i> +38 (097) 471-83-88</a></li>
+                    <li class="flex items-center"><i class="fas fa-globe w-6 md:w-8 text-blue-500 text-base md:text-lg"></i> www.3capital.info</li>
+                </ul>
             </div>
 
             <div>
-                <h4 class="text-lg font-black mb-8 text-white uppercase tracking-widest">Ліцензії та ідентифікатори</h4>
-                <div class="text-slate-500 text-xs leading-relaxed space-y-4 font-light">
+                <h4 class="text-base md:text-lg font-black mb-6 md:mb-8 text-white uppercase tracking-widest">Ліцензії</h4>
+                <div class="text-slate-500 text-[10px] md:text-xs leading-relaxed space-y-3 md:space-y-4 font-light">
                     <p>Ліцензія Національної Ради України з питань телебачення та радіомовлення НР №01730-м</p>
                     <p>Ідентифікатор медіа L11-01730 (FM-радіо RESPECT)</p>
                     <p>Ідентифікатор медіа R11-02108 (online-радіо RESPECT UA)</p>
@@ -406,42 +408,36 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-24 text-slate-600 text-[10px] uppercase tracking-[0.3em] font-bold">
+        <div class="text-center mt-16 md:mt-24 text-slate-600 text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold px-4">
             © 2021-2026 ГО "Медіа-Центр "Третя Столиця". Всі права захищені.
         </div>
     </footer>
 
-    <!-- СТІКІ ПЛЕЄР (ТЕМНА ТЕМА) -->
-    <div id="player" class="fixed bottom-0 w-full sticky-player transform translate-y-full transition-transform duration-500 z-[60] py-4 px-4 sm:px-8">
+    <div id="player" class="fixed bottom-0 w-full sticky-player transform translate-y-full transition-transform duration-500 z-[60] py-3 md:py-4 px-4 sm:px-8">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-5">
-                <!-- Анімація еквалайзера -->
-                <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center text-white shadow-[0_0_15px_rgba(0,71,171,0.5)] relative overflow-hidden group">
-                    <i class="fas fa-music z-10 relative group-hover:scale-110 transition-transform"></i>
+            <div class="flex items-center gap-3 md:gap-5">
+                <div class="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-[0_0_15px_rgba(0,71,171,0.5)] relative overflow-hidden group flex-shrink-0">
+                    <i class="fas fa-music z-10 relative group-hover:scale-110 transition-transform text-sm md:text-base"></i>
                 </div>
                 
-                <div class="hidden sm:block">
-                    <div class="flex items-center gap-2 mb-1">
-                        <span class="w-2 h-2 rounded-full bg-red-500 live-indicator"></span>
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Наживо в ефірі</p>
+                <div class="block">
+                    <div class="flex items-center gap-2 mb-0.5 md:mb-1">
+                        <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-red-500 live-indicator"></span>
+                        <p class="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest hidden sm:block">Наживо в ефірі</p>
                     </div>
-                    <p class="font-bold text-white leading-none text-sm sm:text-base">Радіо RESPECT UA <span class="text-blue-400 font-normal">- 100% позитивної енергії!</span></p>
+                    <p class="font-bold text-white leading-none text-xs sm:text-sm md:text-base">Радіо RESPECT UA <span class="text-blue-400 font-normal hidden md:inline">- 100% позитивної енергії!</span></p>
                 </div>
             </div>
 
-            <!-- Реальний аудіо-потік вставити тут -->
-            <!-- Заміни src на свій реальний Icecast/Shoutcast потік -->
             <audio id="radio-audio" src="https://stream.radiodim.com/stream/radio-respect-radiodim"></audio>
 
             <div class="flex items-center gap-2 sm:gap-6">
-                <!-- Кнопка Play/Pause -->
-                <button onclick="toggleAudio()" id="play-btn" class="w-14 h-14 respect-blue text-white rounded-full flex items-center justify-center text-xl hover:scale-105 active:scale-95 transition-all glow-btn border border-blue-400/30">
+                <button onclick="toggleAudio()" id="play-btn" class="w-10 h-10 md:w-14 md:h-14 respect-blue text-white rounded-full flex items-center justify-center text-sm md:text-xl hover:scale-105 active:scale-95 transition-all glow-btn border border-blue-400/30">
                     <i class="fas fa-play ml-1"></i>
                 </button>
                 
-                <!-- Кнопка закриття -->
-                <button onclick="togglePlayer()" class="text-slate-500 hover:text-white p-3 transition-colors">
-                    <i class="fas fa-chevron-down text-xl"></i>
+                <button onclick="togglePlayer()" class="text-slate-500 hover:text-white p-2 md:p-3 transition-colors">
+                    <i class="fas fa-chevron-down text-base md:text-xl"></i>
                 </button>
             </div>
         </div>
@@ -453,17 +449,44 @@
         const playBtn = document.getElementById('play-btn');
         let isPlaying = false;
 
+        // Логіка мобільного меню
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            
+            if (menu.classList.contains('scale-y-0')) {
+                menu.classList.remove('scale-y-0', 'opacity-0');
+                menu.classList.add('scale-y-100', 'opacity-100');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                menu.classList.remove('scale-y-100', 'opacity-100');
+                menu.classList.add('scale-y-0', 'opacity-0');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Логіка старту плеєра з головної кнопки
+        function startRadio() {
+            player.classList.remove('translate-y-full'); // Піднімаємо панель
+            if (!isPlaying) {
+                toggleAudio(); // Автоматично запускаємо звук
+            }
+        }
+
+        // Логіка приховування панелі
         function togglePlayer() {
             player.classList.toggle('translate-y-full');
         }
 
+        // Логіка відтворення звуку
         function toggleAudio() {
             if (isPlaying) {
                 audio.pause();
                 playBtn.innerHTML = '<i class="fas fa-play ml-1"></i>';
                 playBtn.classList.remove('animate-pulse');
             } else {
-                // Перевірка, чи не заблоковано браузером (Autoplay policy)
                 let playPromise = audio.play();
                 if (playPromise !== undefined) {
                     playPromise.then(_ => {
@@ -477,7 +500,7 @@
             isPlaying = !isPlaying;
         }
 
-        // Автоматична прокрутка до секцій
+        // Автоматична плавна прокрутка
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
